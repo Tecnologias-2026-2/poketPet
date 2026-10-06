@@ -41,6 +41,26 @@ h1, h2 {
 .menu img {
     height: 50px;
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+.logo-texto b {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(17, 24, 39);
+}
+.logo-texto small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgb(100, 116, 139);
+}
 .enlaces {
     display: flex;
     gap: 32px;
