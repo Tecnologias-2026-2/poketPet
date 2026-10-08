@@ -41,14 +41,14 @@
             <img class="panel-mascota" src="assets/mascota emocionada.png" alt="Mascota PocketPet emocionada">
             <div class="panel-datos">
                 <small class="saldo-etiqueta">SALDO DISPONIBLE</small>
-                <div class="saldo-monto"><span class="moneda">$</span>$0</div>
+                <div class="saldo-monto"><span class="moneda">$</span><span id="saldo-valor">$0</span></div>
                 <div class="acciones-saldo">
-                    <button class="boton-ingresar" type="button">Ingresar</button>
-                    <button class="boton-sacar" type="button">Sacar</button>
+                    <a class="boton-ingresar" href="ingresar-dinero.html?modo=ingresar">Ingresar</a>
+                    <a class="boton-sacar" href="ingresar-dinero.html?modo=sacar">Sacar</a>
                 </div>
                 <div class="resumen">
-                    <div class="caja-resumen"><small>Ingresos este mes</small><b>$0</b></div>
-                    <div class="caja-resumen"><small>Gastos este mes</small><b>$0</b></div>
+                    <div class="caja-resumen"><small>Ingresos este mes</small><b id="ingresos-valor">$0</b></div>
+                    <div class="caja-resumen"><small>Gastos este mes</small><b id="gastos-valor">$0</b></div>
                 </div>
             </div>
         </div>
@@ -84,70 +84,163 @@
             </div>
             <img src="assets/mascotabilletes.png" alt ="Mascota PocketPet con billetes">
         </div>
-        <div class="temas">
+                <div class="temas">
             <div class="tema">
                 <img src="assets/billetera.png" alt="Presupuesto">
                 <span class="tema-etiqueta">Fundamentos</span>
                 <h3>Presupuesto</h3>
-                <p>Aprende a planear tus gastos e ingresos.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Aprende a planear tus gastos e ingresos.</p>
+                <div class="tema-detalle">
+                    <p>Es un plan súper sencillo para organizar tu plata. Sirve para saber exactamente cuánto dinero recibes y decidir en qué lo vas a gastar, evitando que te quedes en ceros antes de tiempo.</p>
+                    <p><b>¿Cómo armarlo en 3 pasos?</b></p>
+                    <ol>
+                        <li><b>Suma tus ingresos:</b> Anota todo el dinero que recibes (tu sueldo, mesada, etc.).</li>
+                        <li><b>Resta tus gastos:</b> Escribe lo que debes pagar sí o sí (pasajes, recibos, comida).</li>
+                        <li><b>Separa el ahorro:</b> Destina una parte de lo que sobra para guardarlo o para tus gustos.</li>
+                    </ol>
+                    <p><b>📈 Ejemplo fácil:</b> Si recibes $50.000 a la semana, puedes planearlo así: $20.000 para transporte, $20.000 para comidas y guardas $10.000 en tu alcancía. ¡Así tú controlas el dinero y no el dinero a ti!</p>
+                    <p><b>🐾 Tip de PocketPet:</b> ¡Cuidado con los "gastos hormiga"! Esas pequeñas compras diarias (como un tinto o un dulce) suman mucho al final del mes. ¡Anotar todo es la clave!</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/interes.png" alt="Intereses">
                 <span class="tema-etiqueta">Conceptos Clave</span>
                 <h3>Intereses</h3>
-                <p>Descubre cómo funcionan y cómo te afectan.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Descubre cómo funcionan y cómo te afectan.</p>
+                <div class="tema-detalle">
+                    <p>De forma sencilla, el interés es el "precio" del dinero. Dependiendo de si estás ahorrando o pidiendo prestado, puede ser tu mejor amigo o un gasto extra.</p>
+                    <ul>
+                        <li><b>Cuando ahorras:</b> el banco te paga un porcentaje extra por guardar tu dinero.</li>
+                        <li><b>Cuando pides prestado:</b> debes pagar un porcentaje adicional por usar dinero prestado.</li>
+                        <li><b>Tasa de interés:</b> indica cuánto dinero extra vas a ganar o pagar.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> Si te prestan $100.000 con un interés del 2% mensual, debes devolver $102.000. Los $2.000 son el interés.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> Antes de pedir un préstamo o comprar a muchas cuotas, revisa siempre la tasa de interés. Un interés alto puede hacer que termines pagando mucho más.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/ahorro.png" alt="Importancia del ahorro">
                 <span class="tema-etiqueta">Ahorro</span>
                 <h3>Importancia del Ahorro</h3>
-                <p>Conoce por qué es importante ahorrar.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Conoce por qué es importante ahorrar.</p>
+                <div class="tema-detalle">
+                    <p>Ahorrar no es simplemente guardar lo que te sobra al final del mes, es "págate a ti mismo primero". Es la base para cumplir tus metas y estar tranquilo ante cualquier situación.</p>
+                    <ul>
+                        <li><b>Fondo de emergencias:</b> Te ayuda a cubrir imprevistos sin pedir préstamos.</li>
+                        <li><b>Cumplir metas:</b> Puedes comprar lo que quieres sin endeudarte ni pagar intereses.</li>
+                        <li><b>Paz mental:</b> Tener dinero guardado te da seguridad y tranquilidad.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> Si algo cuesta $600.000 y ahorras $50.000 al mes, en un año tendrás los $600.000 para comprarlo sin deudas.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> Empieza con poco y sé constante. Ahorrar es pagarte a ti mismo primero y convertirlo en un hábito.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/credito.png" alt="Vida crediticia">
                 <span class="tema-etiqueta">Crédito</span>
                 <h3>Empieza tu vida crediticia</h3>
-                <p>Construir historial es clave para tu futuro financiero.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Construir historial es clave para tu futuro financiero.</p>
+                <div class="tema-detalle">
+                    <p><b>¿Qué es?</b> Es tu "hoja de vida" financiera y muestra cómo manejas tus deudas y pagos.</p>
+                    <ul>
+                        <li><b>Empieza pequeño:</b> Puedes construirlo con servicios o productos financieros sencillos.</li>
+                        <li><b>Paga a tiempo:</b> Ser puntual ayuda a mantener un buen historial.</li>
+                        <li><b>No te sobreendeudes:</b> Usa solo lo que realmente puedes pagar.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> Si pagas puntualmente un servicio durante un año, demuestras responsabilidad financiera y puedes tener mejores oportunidades de crédito en el futuro.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> Cuida tu historial financiero. Evita atrasarte en los pagos y pide solo créditos que puedas manejar.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/cdt.png" alt="CDT">
                 <span class="tema-etiqueta">Inversión</span>
                 <h3>¿Qué es un CDT?</h3>
-                <p>Haz que tu dinero crezca, guardándolo de forma segura.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Haz que tu dinero crezca, guardándolo de forma segura.</p>
+                <div class="tema-detalle">
+                    <p>Un CDT (Certificado de Depósito a Término) es una forma de ahorrar en la que guardas tu dinero en un banco por un tiempo determinado, y al final recibes ese dinero con ganancias (intereses).</p>
+                    <p><b>¿Cómo funciona?</b></p>
+                    <ul>
+                        <li>Depositas una cantidad de dinero.</li>
+                        <li>Eliges un tiempo (ej: 3, 6 o 12 meses).</li>
+                        <li>No puedes retirarlo antes sin penalización.</li>
+                        <li>Al final recibes tu dinero + intereses.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo fácil:</b> Si guardas $1.000.000 en un CDT a 6 meses, al final puedes recibir más dinero, por ejemplo $1.050.000 (depende del banco y la tasa de interés).</p>
+                    <p><b>🐾 Tip de PocketPet:</b> Si no necesitas usar ese dinero pronto, un CDT puede hacerlo crecer sin riesgo.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/activos.png" alt="Activos y pasivos">
                 <span class="tema-etiqueta">Conceptos Clave</span>
                 <h3>Activos y pasivos</h3>
-                <p>Aprende qué te genera dinero y qué te lo quita.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Aprende qué te genera dinero y qué te lo quita.</p>
+                <div class="tema-detalle">
+                    <ul>
+                        <li><b>Activos:</b> cosas que pueden generar ingresos o aumentar su valor, como un negocio, un CDT o una inversión.</li>
+                        <li><b>Pasivos:</b> deudas y gastos que hacen que salga dinero de tu bolsillo, como préstamos o cuotas.</li>
+                        <li><b>Regla de oro:</b> busca tener más activos que pasivos para mejorar tu salud financiera.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> Un carro que usas para trabajar puede generar ingresos y ser un activo. Si solo lo tienes por lujo, puede convertirse en un gasto constante.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> Antes de comprar algo, pregúntate: ¿me ayudará a generar dinero o me traerá más gastos?</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/recibos.png" alt="Paga tus recibos">
                 <span class="tema-etiqueta">Fundamentos</span>
                 <h3>Paga tus recibos</h3>
-                <p>Conoce los lugares y opciones para pagar fácil y seguro.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Conoce los lugares y opciones para pagar fácil y seguro.</p>
+                <div class="tema-detalle">
+                    <ul>
+                        <li><b>Apps bancarias:</b> Puedes pagar tus recibos desde el celular.</li>
+                        <li><b>Billeteras digitales:</b> Apps como Nequi o Daviplata permiten pagar servicios fácilmente.</li>
+                        <li><b>PSE:</b> Puedes pagar directamente desde la página web de la empresa.</li>
+                        <li><b>Puntos físicos:</b> También puedes pagar en efectivo en lugares autorizados.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> Si tu internet cuesta $80.000, puedes escanear el código de barras desde tu app bancaria y pagar en pocos minutos.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> Activa recordatorios o pagos automáticos para evitar retrasos y cobros adicionales.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/ahorro.png" alt="Ahorro e inversiones">
                 <span class="tema-etiqueta">Inversión</span>
                 <h3>Ahorro e Inversiones</h3>
-                <p>Da el salto de ahorrar a invertir.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Da el salto de ahorrar a invertir.</p>
+                <div class="tema-detalle">
+                    <ul>
+                        <li><b>Ahorro:</b> Guardas una parte de tu dinero para usarlo en el futuro, ya sea para una meta o una emergencia.</li>
+                        <li><b>Inversión:</b> Pones tu dinero en algo que puede generar ganancias con el tiempo, aunque también puede tener riesgos.</li>
+                        <li><b>La diferencia:</b> Ahorrar busca principalmente guardar y proteger tu dinero; invertir busca hacerlo crecer.</li>
+                        <li><b>Empieza poco a poco:</b> Antes de invertir, es importante tener un ahorro para emergencias y conocer dónde estás poniendo tu dinero.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> Si ahorras $50.000 al mes, tendrás $600.000 en un año. Si después decides invertir una parte, ese dinero podría crecer con el tiempo.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> ¡Primero ahorra, luego invierte! No necesitas empezar con mucho dinero; lo importante es crear el hábito y aprender antes de tomar decisiones.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
             <div class="tema">
                 <img src="assets/tarjeta.png" alt="Tarjetas y crédito">
                 <span class="tema-etiqueta">Crédito</span>
                 <h3>Tarjetas y Crédito</h3>
-                <p>Cómo funcionan y cómo usarlas de forma responsable.</p>
-                <span class="tema-mas">+</span>
+                <p class="tema-resumen">Cómo funcionan y cómo usarlas de forma responsable.</p>
+                <div class="tema-detalle">
+                    <p>Entender cómo funcionan las tarjetas es la clave para usar el dinero a tu favor y no endeudarte sin necesidad.</p>
+                    <ul>
+                        <li><b>Débito:</b> usas el dinero que ya tienes en tu cuenta.</li>
+                        <li><b>Crédito:</b> el banco te presta dinero y luego debes devolverlo, generalmente con intereses si lo pagas en varias cuotas.</li>
+                        <li><b>Fechas importantes:</b> debes conocer la fecha de corte y la fecha límite de pago.</li>
+                    </ul>
+                    <p><b>📈 Ejemplo:</b> unos tenis de $150.000 a 1 cuota cuestan $150.000; a 6 cuotas pueden terminar costando más por los intereses.</p>
+                    <p><b>🐾 Tip de PocketPet:</b> La tarjeta de crédito no es dinero extra. Úsala responsablemente y, cuando sea posible, paga tus compras a una sola cuota.</p>
+                </div>
+                <button class="tema-mas" type="button">+</button>
             </div>
+        </div>
         </div>
     </section>
 

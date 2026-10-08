@@ -581,20 +581,27 @@ h1, h2 {
     font-family: 'DM Sans', Arial, sans-serif;
     font-size: 13px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .boton-ingresar {
     background-color: rgb(22, 163, 74);
     color: rgb(255, 255, 255);
 }
-.boton-ingresar:hover {
-    background-color: rgb(16, 120, 54);
-}
+
 .boton-sacar {
     background-color: rgb(255, 255, 255);
     color: rgb(17, 24, 39);
 }
-.boton-sacar:hover {
-    background-color: rgb(235, 245, 240);
+.boton-ingresar:hover, .boton-sacar:hover {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+    transition: background-color 0.2s, color 0.2s;
+}
+.pestana:hover {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
 }
 .resumen {
     display: flex;
@@ -716,6 +723,7 @@ h1, h2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
+    align-items: start;
 }
 .tema {
     position: relative;
@@ -763,6 +771,10 @@ h1, h2 {
     background-color: rgb(34, 214, 100);
     color: rgb(17, 24, 39);
     font-size: 14px;
+    font-family: "DM Sans", Arial, sans-serif;
+    border-style:none;
+    padding: 0;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -882,6 +894,270 @@ h1, h2 {
     font-size: 13px;
     color: rgb(60, 130, 40);
 }
+
+/* ---------- TARJETAS DESPLEGABLES ---------- */
+.tema-detalle {
+    display: none;
+    margin-top: 8px;
+}
+.tema.abierto .tema-detalle {
+    display: block;
+}
+.tema.abierto .tema-resumen {
+    display: none;
+}
+.tema.abierto {
+    padding-bottom: 56px;
+}
+.tema .tema-detalle p {
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgb(70, 100, 50);
+    margin: 0 0 10px;
+}
+.tema-detalle ul, .tema-detalle ol {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgb(70, 100, 50);
+}
+.tema-detalle li {
+    margin-bottom: 8px;
+}
+.tema-detalle b {
+    color: rgb(40, 80, 30);
+}
+/* ---------- INGRESAR Y SACAR DINERO ---------- */
+.panel-movimiento {
+    background-image: linear-gradient(180deg, rgb(216, 244, 236), rgb(173, 222, 210));
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+.panel-movimiento .fondo-circulo {
+    background-color: rgb(167, 240, 214);
+}
+.panel-movimiento .contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+.movimiento-mascota {
+    width: 190px;
+}
+.movimiento-datos {
+    flex: 1;
+}
+.tarjeta-mensaje {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 18px 22px;
+}
+.tarjeta-mensaje small {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.tarjeta-mensaje h2 {
+    font-size: 36px;
+    line-height: 1.1;
+    margin: 6px 0 2px;
+}
+.tarjeta-mensaje p {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 17px;
+    margin: 0;
+}
+.cifras {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+}
+.cifra {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.icono-cifra {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 11px;
+    margin: 0 auto 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icono1 { background-color: rgb(22, 163, 74); color: rgb(255, 255, 255); }
+.icono2 { background-color: rgb(209, 250, 220); color: rgb(22, 163, 74); }
+.icono3 { background-color: rgb(255, 247, 190); color: rgb(245, 158, 11); }
+.cifra small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: rgb(140, 150, 165);
+}
+.cifra b {
+    font-size: 14px;
+}
+.movimiento {
+    width: 540px;
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 24px 0 50px;
+}
+.pestanas {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.pestana {
+    flex: 1;
+    height: 34px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(100, 116, 139);
+    border-style: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.pestana.activa {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+}
+.etiqueta-seccion {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(140, 150, 165);
+    margin: 16px 0 8px;
+}
+.montos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.monto {
+    height: 34px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 24, 39);
+    border-style: solid;
+    border-color: rgb(230, 234, 238);
+    border-width: 1px;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.monto.activo {
+    background-color: rgb(0, 200, 80);
+    border-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+}
+.caja {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.caja .etiqueta-seccion {
+    margin-top: 0;
+}
+.campo-monto {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    border-style: solid;
+    border-color: rgb(230, 234, 238);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 0 14px;
+    margin: 10px 0 8px;
+}
+.campo-monto span {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(100, 116, 139);
+}
+.campo-monto input {
+    flex: 1;
+    width: 100%;
+    border-style: none;
+    outline-style: none;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(100, 116, 139);
+}
+.mensaje-monto {
+    font-size: 12px;
+    min-height: 16px;
+    margin: 0 0 12px;
+    color: rgb(22, 120, 60);
+}
+.mensaje-monto.error {
+    color: rgb(220, 38, 38);
+}
+.boton-confirmar {
+    width: 100%;
+    height: 44px;
+    background-color: rgb(243, 244, 246);
+    color: rgb(200, 205, 212);
+    border-style: none;
+    border-radius: 22px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+.boton-confirmar.listo {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.boton-confirmar.listo:hover {
+    background-color: rgb(0, 170, 68);
+}
+.lista-movimientos {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    min-height: 120px;
+}
+.fila-movimiento {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 240, 243);
+    border-bottom-width: 1px;
+}
+.positivo {
+    color: rgb(22, 163, 74);
+}
+.negativo {
+    color: rgb(220, 38, 38);
+}
+.sin-movimientos {
+    font-size: 12px;
+    color: rgb(160, 170, 180);
+}
 /* ---------- CELULAR ---------- */
 @media (max-width: 800px) {
     .enlaces { display: none; }
@@ -893,7 +1169,7 @@ h1, h2 {
     .tarjetas { grid-template-columns: 1fr; }
     .lado-izquierdo { display: none; }
     .navegacion { flex-wrap: wrap;gap: 6px;}
-    .panel-saldo.contenedor { flex-direction: column;gap: 20 px;}
+    .panel-saldo.contenedor { flex-direction: column;gap: 20px;}
     .panel-mascota{ width: 130px;}
     .acceso { flex-wrap: wrap;}
     .banner-educacion { flex-direction: column; padding: 30px 20px; text-align: center;}
@@ -901,4 +1177,8 @@ h1, h2 {
     .banner-educacion img {margin-top:20px ;}
     .estadisticas{ justify-content: center;}
     .temas{ grid-template-columns: 1fr;}
+    .panel-movimiento.contenedor{ flex-direction: column; gap: 20px;}
+    .movimiento-mascota{ width: 130px;}
+    .tarjeta-mensaje h2{ font-size: 28px;}
+    .montos {grid-template-columns: 1fr 1fr;}
 }

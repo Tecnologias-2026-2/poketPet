@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Ingresar y sacar dinero - PocketPet</title>
+</head>
+<body class="principal">
+     <header class="encabezado">
+        <div class="contenedor menu">
+            <div class="logo">
+                <img src="assets/mascotalogo.png" alt="Mascota PocketPet">
+                <div class="logo-texto">
+                    <b>POCKETPET</b>
+                    <small>EDUCACIÓN FINANCIERA</small>
+                </div>
+            </div>
+            <div class="usuario">
+                <button class="perfil" id="boton-perfil" type="button">
+                    <span class="avatar-perfil">U</span>
+                    Hola, <span id="nombre-usuario">usuario</span>
+                </button>
+                <a class="salir" href="landingpage.html">⇥ Salir</a>
+            </div>
+        </div>
+        <nav class="contenedor navegacion">
+            <a href="main.html">🏠 Inicio</a>
+            <a class="enlace-carga" href="#" data-destino="metas.html">🎯 Mis metas</a>
+            <a class="enlace-carga" href="#" data-destino="categorias.html">🗂️ Categorías</a>
+            <a href="main.html#educacion">📚 Educación financiera</a>
+        </nav>
+    </header>
+     <section class="panel-movimiento">
+        <div class="fondo-circulo fondo1"></div>
+        <div class="fondo-circulo fondo2"></div>
+        <div class="contenedor">
+            <img class="movimiento-mascota" id="mov-mascota" src="assets/mascota-festejo.png" alt="Mascota PocketPet">
+            <div class="movimiento-datos">
+                <div class="tarjeta-mensaje">
+                    <small>🐾 POCKET PET</small>
+                    <h2 id="mov-titulo">WOW!!,</h2>
+                    <p id="mov-subtitulo">vamos por más</p>
+                </div>
+                <div class="cifras">
+                    <div class="cifra"><span class="icono-cifra icono1">$</span><small>SALDO</small><b id="cifra-saldo">$0</b></div>
+                    <div class="cifra"><span class="icono-cifra icono2">↑</span><small>INGRESADO</small><b id="cifra-ingresado">$0</b></div>
+                    <div class="cifra"><span class="icono-cifra icono3">★</span><small>METAS</small><b>0</b></div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="movimiento">
+        <div class="pestanas">
+            <button class="pestana activa" type="button" data-modo="ingresar">💰 Ingresar</button>
+            <button class="pestana" type="button" data-modo="sacar">💸 Sacar</button>
+        </div>
+
+        <span class="etiqueta-seccion">Montos rápidos</span>
+        <div class="montos">
+            <button class="monto" type="button" data-valor="500">$500</button>
+            <button class="monto" type="button" data-valor="1000">$1000</button>
+            <button class="monto" type="button" data-valor="2000">$2000</button>
+            <button class="monto" type="button" data-valor="5000">$5000</button>
+        </div>
+
+        <div class="caja">
+            <label class="etiqueta-seccion" id="mov-pregunta" for="cantidad">¿Cuánto vas a ingresar?</label>
+            <div class="campo-monto">
+                <span>$</span>
+                <input type="text" id="cantidad" inputmode="numeric" placeholder="0" autocomplete="off">
+            </div>
+            <p class="mensaje-monto" id="mensaje-monto"></p>
+            <button class="boton-confirmar" id="boton-confirmar" type="button" disabled>Confirmar ingreso</button>
+        </div>
+
+        <div class="caja">
+            <span class="etiqueta-seccion">Últimos movimientos</span>
+            <ul class="lista-movimientos" id="lista-movimientos"></ul>
+        </div>
+    </section>
+
+    <div class="fondo-ventana">
+        <div class="ventana-perfil">
+            <div class="ventana-cabecera">
+                <span>Mi cuenta PocketPet</span>
+                <button class="cerrar-ventana" id="cerrar-perfil" type="button">✕</button>
+            </div>
+            <div class="ventana-cuerpo">
+                <div class="perfil-principal">
+                    <span class="avatar-grande">U</span>
+                    <div>
+                        <b>Usuario</b>
+                        <small>usuario@correo.com</small>
+                    </div>
+                </div>
+                <div class="dato"><span>Nombre</span><b>Nombre completo</b></div>
+                <div class="dato"><span>Correo</span><b>usuario@correo.com</b></div>
+                <div class="dato"><span>Miembro desde</span><b>Septiembre 2026</b></div>
+            </div>
+            <div class="ventana-pie">
+                <a href="landingpage.html">⇥ Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cargando">
+        <div class="puntos">
+            <div class="punto punto1"></div>
+            <div class="punto punto2"></div>
+            <div class="punto punto3"></div>
+            <div class="punto punto4"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
