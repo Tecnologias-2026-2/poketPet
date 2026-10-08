@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Inicio - PocketPet</title>
+</head>
+<body class ="principal">
+
+    <header class ="encabezado">
+    <div class="contenedor menu">
+        <div class ="logo">
+            <img src ="assets/mascotalogo.png" alt="Mascota PocketPet">
+            <div class ="logo-texto">
+                <b>POCKETPET</b>
+                <small>EDUCACION FINANCIERA</small>
+            </div>
+        </div>
+        <div class="usuario">
+            <button class ="perfil" id ="boton-perfil" type=" button">
+                <span class = "avatar-perfil">usuario</span>
+            </button>
+        </div>
+    </div>
+    <nav class="contenedor navegacion">
+        <a class="activo" href="#" id ="enlace-inicio"> 🏠 INICIO </a>
+        <a class="enlace-carga" href="#" data-destino="metas.html">🎯 Mis metas</a>
+        <a class="enlace-carga" href="#" data-destino="categorias.html">🗂️ Categorías</a>
+        <a href="#educacion" id="enlace-educacion">📚 Educación financiera</a>
+
+    </nav>    
+    </header>
+
+    <section class="panel-saldo" id="inicio">
+        <div class="fondo-circulo fondo1"></div>
+        <div class="fondo-circulo fondo2"></div>
+        <div class="contenedor">
+            <img class="panel-mascota" src="assets/mascota emocionada.png" alt="Mascota PocketPet emocionada">
+            <div class="panel-datos">
+                <small class="saldo-etiqueta">SALDO DISPONIBLE</small>
+                <div class="saldo-monto"><span class="moneda">$</span>$0</div>
+                <div class="acciones-saldo">
+                    <button class="boton-ingresar" type="button">Ingresar</button>
+                    <button class="boton-sacar" type="button">Sacar</button>
+                </div>
+                <div class="resumen">
+                    <div class="caja-resumen"><small>Ingresos este mes</small><b>$0</b></div>
+                    <div class="caja-resumen"><small>Gastos este mes</small><b>$0</b></div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="contenedor accesos">
+        <div class="acceso">
+            <img src="assets/ahorro.png" alt="Metas de ahorro">
+            <div class="acceso-texto">
+                <h3>Metas de ahorro</h3>
+                <p>Conoce tus metas de ahorro, un lugar donde puedes ahorrar para hacer realidad tus sueños de manera responsable y divertida.</p>
+            </div>
+            <a class="boton-pequeno enlace-carga" href="#" data-destino="metas.html">Ir a mis metas</a>
+        </div>
+        <div class="acceso">
+            <img src="assets/tarjeta.png" alt="Categorías">
+            <div class="acceso-texto">
+                <h3>Categorías</h3>
+                <p>Conoce tus categorías, un espacio exclusivo para almacenar el dinero de tus gastos fijos, aparta lo necesario primero.</p>
+            </div>
+            <a class="boton-pequeno enlace-carga" href="#" data-destino="categorias.html">Ir a mis categorías</a>
+        </div>
+    </section>
+
+    <section class="contenedor educacion" id="educacion">
+        <div class ="banner-educacion">
+            <div class="banner-texto">
+                <h2> APRENDE SOBRE <span class= "amarillo"> FINANZAS </span></h2>
+                <p> ¡Explora conceptos básicos de finanzas para manejar tu dinero mejor!</p>
+                <div class="estadisticas">
+                    <div><b class="numero1">9</b><small>Temas financieros</small></div>
+                    <div><b class="numero2">5 min</b><small>Lecturas rápidas</small></div>
+                </div>
+            </div>
+            <img src="assets/mascotabilletes.png" alt ="Mascota PocketPet con billetes">
+        </div>
+        <div class="temas">
+            <div class="tema">
+                <img src="assets/billetera.png" alt="Presupuesto">
+                <span class="tema-etiqueta">Fundamentos</span>
+                <h3>Presupuesto</h3>
+                <p>Aprende a planear tus gastos e ingresos.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/interes.png" alt="Intereses">
+                <span class="tema-etiqueta">Conceptos Clave</span>
+                <h3>Intereses</h3>
+                <p>Descubre cómo funcionan y cómo te afectan.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/ahorro.png" alt="Importancia del ahorro">
+                <span class="tema-etiqueta">Ahorro</span>
+                <h3>Importancia del Ahorro</h3>
+                <p>Conoce por qué es importante ahorrar.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/credito.png" alt="Vida crediticia">
+                <span class="tema-etiqueta">Crédito</span>
+                <h3>Empieza tu vida crediticia</h3>
+                <p>Construir historial es clave para tu futuro financiero.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/cdt.png" alt="CDT">
+                <span class="tema-etiqueta">Inversión</span>
+                <h3>¿Qué es un CDT?</h3>
+                <p>Haz que tu dinero crezca, guardándolo de forma segura.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/activos.png" alt="Activos y pasivos">
+                <span class="tema-etiqueta">Conceptos Clave</span>
+                <h3>Activos y pasivos</h3>
+                <p>Aprende qué te genera dinero y qué te lo quita.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/recibos.png" alt="Paga tus recibos">
+                <span class="tema-etiqueta">Fundamentos</span>
+                <h3>Paga tus recibos</h3>
+                <p>Conoce los lugares y opciones para pagar fácil y seguro.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/ahorro.png" alt="Ahorro e inversiones">
+                <span class="tema-etiqueta">Inversión</span>
+                <h3>Ahorro e Inversiones</h3>
+                <p>Da el salto de ahorrar a invertir.</p>
+                <span class="tema-mas">+</span>
+            </div>
+            <div class="tema">
+                <img src="assets/tarjeta.png" alt="Tarjetas y crédito">
+                <span class="tema-etiqueta">Crédito</span>
+                <h3>Tarjetas y Crédito</h3>
+                <p>Cómo funcionan y cómo usarlas de forma responsable.</p>
+                <span class="tema-mas">+</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class ="pie">
+        <div class ="contenedor"> © 2026 PocketPet. Todos los derechos reservados.</div>
+    </footer>
+
+    <div class ="fondo-ventana">
+        <div class = "ventana-perfil">
+            <div class ="ventana-cabecera">
+                <span> Mi cuenta PocketPet</span>
+                <button class ="cerrar-ventana" id="cerrar-perfil" type="button">X</button>
+            </div>
+            <div class ="ventana-cuerpo">
+                <div class="perfil-principal">
+                    <span class="avatar-grande">U</span>
+                    <div>
+                        <b>Usuario</b>
+                        <small>usuario@gmail.com</small>
+                    </div>
+                </div>
+                <div class="dato"><span>Nombre</span><b>Nombre completo</b></div>
+                <div class="dato"><span>Correo</span><b>Usuario@gmail.com</b></div>
+                <div class="dato"><span>Miembro desde</span><b>septiembre 2026</b></div>
+            </div>
+            <div class="ventana-pie">
+                <a href="landingpage.html">⇥ Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+
+     <div class="cargando">
+        <div class="puntos">
+            <div class="punto punto1"></div>
+            <div class="punto punto2"></div>
+            <div class="punto punto3"></div>
+            <div class="punto punto4"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html
+
+
+    
+
+
