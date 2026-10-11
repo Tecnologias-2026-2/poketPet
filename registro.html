@@ -31,9 +31,27 @@
                 <label for="correo">Correo electrónico<span style="color:red">*</span></label>
                 <input type="email" id="correo" placeholder="ingresar correo" required>
                 <label for="clave">Contraseña</label>
-                <input type="password" id="clave" placeholder="crear contraseña" required>
-                <label for="clave2">Confirmar contraseña</label>
-                <input type="password" id="clave2" placeholder="contraseña" required>
+                <div class="campo-clave">
+                    <input type="password" id="clave" placeholder="mínimo 6 caracteres" minlength="6" required>
+                    <button type="button" class="ver-clave" data-campo="clave" aria-label="Mostrar contraseña">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                            <line class="tachado" x1="3" y1="3" x2="21" y2="21" style="display:none"/>
+                        </svg>
+                    </button>
+                </div>
+            <label for="clave2">Confirmar contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="clave2" placeholder="repite la contraseña" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="clave2" aria-label="Mostrar contraseña">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        <line class="tachado" x1="3" y1="3" x2="21" y2="21" style="display:none"/>
+                    </svg>
+                </button>
+            </div>
                 <button class="boton-amarillo" type="submit">Crear Cuenta</button>
                 <p class="enlace-pequeno">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a><br><br><a href="landingpage.html">Anterior</a></p>
             </form>
@@ -48,6 +66,43 @@
             <div class="punto punto4"></div>
         </div>
     </div>
+    <script src="scripts.js"></script>
+    <script>
+        (function () {
+            var clave = document.getElementById('clave');
+            var clave2 = document.getElementById('clave2');
+
+            // Ojito para cada campo de contraseña
+            document.querySelectorAll('.ver-clave').forEach(function (boton) {
+                var campo = document.getElementById(boton.dataset.campo);
+                var tachado = boton.querySelector('.tachado');
+
+                boton.addEventListener('click', function () {
+                    var oculta = campo.type === 'password';
+                    campo.type = oculta ? 'text' : 'password';
+                    tachado.style.display = oculta ? 'block' : 'none';
+                    boton.setAttribute('aria-label', oculta ? 'Ocultar contraseña' : 'Mostrar contraseña');
+                });
+            });
+
+            // Mínimo 6 caracteres y que ambas coincidan
+            function validar() {
+                var mensaje = '';
+                if (clave.value.length < 6) {
+                     mensaje = 'La contraseña debe tener mínimo 6 caracteres';
+                } else if (/\s/.test(clave.value)) {
+                     mensaje = 'La contraseña no puede tener espacios';
+                }
+                clave.setCustomValidity(mensaje);
+
+                clave2.setCustomValidity(
+                    clave2.value !== clave.value ? 'Las contraseñas no coinciden' : ''
+            );
+        }   
+            clave.addEventListener('input', validar);
+            clave2.addEventListener('input', validar);
+        })();
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>

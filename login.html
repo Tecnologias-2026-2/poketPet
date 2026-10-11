@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="cargando">
+        <div class="cargando">
         <div class="puntos">
             <div class="punto punto1"></div>
             <div class="punto punto2"></div>
@@ -54,7 +54,7 @@
             <div class="punto punto4"></div>
         </div>
     </div>
-    <script src="scripts.js"></script>
+
     <script>
         (function () {
             var campo = document.getElementById('clave');
@@ -69,9 +69,13 @@
             });
 
             campo.addEventListener('input', function () {
-                campo.setCustomValidity(
-                    campo.value.length < 6 ? 'La contraseña debe tener mínimo 6 caracteres' : ''
-                );
+                var mensaje = '';
+                if (campo.value.length < 6) {
+                    mensaje = 'La contraseña debe tener mínimo 6 caracteres';
+                } else if (/\s/.test(campo.value)) {
+                    mensaje = 'La contraseña no puede tener espacios';
+                }
+                campo.setCustomValidity(mensaje);
             });
         })();
     </script>
