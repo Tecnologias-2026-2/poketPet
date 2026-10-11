@@ -1184,6 +1184,99 @@ h1, h2 {
 .ver-clave:hover {
     color: rgb(22, 120, 60);
 }
+/* ---------- RECUPERAR CONTRASEÑA ---------- */
+.paso {
+    display: none;
+}
+.paso.activo {
+    display: block;
+}
+.formulario .codigo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 6px;
+}
+.formulario .codigo input {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.formulario .codigo input:focus {
+    outline-style: solid;
+    outline-color: rgb(255, 204, 0);
+    outline-width: 2px;
+}
+
+/* ---------- MENSAJE DE CONTRASEÑA RESTABLECIDA ---------- */
+.fondo-exito {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+}
+.fondo-exito.activo {
+    display: flex;
+}
+.tarjeta-exito {
+    width: 340px;
+    max-width: 90%;
+    background-image: linear-gradient(180deg, rgb(240, 253, 250), rgb(255, 255, 255));
+    border-radius: 16px;
+    padding: 30px 26px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.icono-exito {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background-color: rgb(167, 240, 214);
+    color: rgb(22, 120, 60);
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tarjeta-exito h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 18px;
+    color: rgb(10, 120, 80);
+    margin: 0 0 8px;
+}
+.tarjeta-exito p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgb(90, 100, 110);
+    margin: 0 0 20px;
+}
+.boton-iniciar {
+    width: 100%;
+    height: 40px;
+    background-image: linear-gradient(90deg, rgb(34, 197, 94), rgb(14, 165, 233));
+    color: rgb(255, 255, 255);
+    border-style: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-iniciar:hover {
+    opacity: 0.9;
+}
 /* ---------- CELULAR ---------- */
 @media (max-width: 800px) {
     .enlaces { display: none; }
