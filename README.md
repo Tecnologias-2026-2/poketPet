@@ -64,10 +64,20 @@ Tablas principales
 
 🧩 7. Documentación del Sistema
 Estructura de Carpetas
-/css
-/assets
-
-Explicar brevemente qué contiene cada carpeta.
+/
+css/                         # Hoja de estilos del proyecto
+(archivo CSS único)          # Estilos compartidos por todas las páginas
+assets/                      # Recursos gráficos (imágenes, poses de la mascota)
+README.md                    # Descripción general del proyecto
+scripts.js                   # Lógica en JavaScript (ingreso y retiro de dinero)
+pagina-de-aterrizaje.html    # Página de inicio (landing)
+registro.html                # Registro de usuarios
+login.html                   # Inicio de sesión
+recuperar.html               # Recuperar contraseña (código de verificación)
+main.html                    # Pantalla principal del usuario
+ingresar-dinero.html         # Ingreso y retiro de dinero
+categorias.html              # Categorías
+metas.html                   # Metas de ahorro
 
 🚀 8. Instalación y Ejecución
 
