@@ -1,17 +1,262 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/estilo.css">
-        <title>Mis metas - PocketPet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/secciones.css">
+    <link rel="stylesheet" href="css/metas.css">
+    <title>Mis metas - PocketPet</title>
 </head>
-<body class ="pagina-vacia">
-    <div class ="mensaje-vacio">
-        <h2>SECCION DE METAS PRONTO HEHE</h2>
-        <a class ="enlace-volver" href="main.html">← Volver al inicio</a>
+<body class="pagina-categorias">
 
+    <header class="encabezado">
+        <div class="contenedor menu">
+            <div class="logo">
+                <img src="assets/mascotalogo.png" alt="Mascota PocketPet">
+                <div class="logo-texto">
+                    <b>POCKETPET</b>
+                    <small>EDUCACION FINANCIERA</small>
+                </div>
+            </div>
+            <div class="usuario">
+                <button class="perfil" id="boton-perfil" type="button">
+                    <span class="avatar-perfil">usuario</span>
+                </button>
+            </div>
+        </div>
+        <nav class="contenedor navegacion">
+            <a class="enlace-carga" href="#" data-destino="main.html">🏠 INICIO</a>
+            <a class="activo" href="#" id="enlace-metas">🎯 Mis metas</a>
+            <a class="enlace-carga" href="#" data-destino="categorias.html">🗂️ Categorías</a>
+            <a class="enlace-carga" href="#" data-destino="main.html#educacion">📚 Educación financiera</a>
+        </nav>
+    </header>
+
+    <!-- ========== VISTA 1: LISTA DE METAS ========== -->
+    <main class="vista contenedor" id="vista-lista">
+        <div class="cabecera-seccion">
+            <div>
+                <h1>Mis metas de ahorro 🎯</h1>
+                <p>Aquí puedes consultar y administrar todas tus metas. ¡Cada peso cuenta para hacer realidad tus sueños!</p>
+            </div>
+            <button class="boton-nuevo" id="boton-nueva-meta" type="button">+ Crear nueva meta</button>
+            <p class="aviso-maximo" id="aviso-maximo" hidden>Llegaste al máximo de 4 metas. Elimina una para crear otra.</p>
+        </div>
+
+        <section class="resumen-tarjetas">
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-verde">🎯</span>
+                <div><small>Total metas activas</small><b id="resumen-activas">0</b></div>
+            </div>
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-azul">💰</span>
+                <div><small>Total ahorrado</small><b id="resumen-ahorrado">$0</b></div>
+            </div>
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-morado">🏆</span>
+                <div><small>Total a alcanzar</small><b id="resumen-meta">$0</b></div>
+            </div>
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-naranja">📈</span>
+                <div><small>Progreso global</small><b id="resumen-progreso">0%</b></div>
+            </div>
+        </section>
+
+        <section class="categorias-layout">
+            <div class="cuadricula" id="cuadricula"></div>
+            <aside class="lateral-categorias">
+                <div class="nota-lateral" id="nota-estado"></div>
+                <div class="nota-lateral">
+                    <b>Consejo</b>
+                    Ahorra al menos el 10% de tus ingresos mensualmente para alcanzar tus metas más rápido.
+                </div>
+            </aside>
+        </section>
+
+        <section class="banner-verde">
+            <h3>¡Vas muy bien con tus ahorros, wow!</h3>
+            <p>Cada pequeño aporte te acerca más a tus sueños. ¡Sigue adelante!</p>
+        </section>
+    </main>
+
+    <!-- ========== VISTA 2: CREAR META ========== -->
+    <main class="vista contenedor" id="vista-crear" hidden>
+        <button class="enlace-atras" id="crear-volver" type="button">← Volver a mis metas</button>
+        <div class="cabecera-seccion">
+            <div>
+                <h1>Crea tu nueva meta 🎯</h1>
+                <p>Ponle nombre a tu sueño, dile cuánto cuesta y cuándo quieres lograrlo.</p>
+            </div>
+        </div>
+
+        <section class="crear-caja">
+            <div class="crear-columnas">
+                <div>
+                    <span class="etiqueta-seccion">Nombre de la meta</span>
+                    <input class="campo-texto" id="nombre-meta" type="text" maxlength="25" placeholder="Ej: Nuevo celular">
+                    <span class="contador-nombre" id="contador-nombre">0/25</span>
+
+                    <span class="etiqueta-seccion">Monto de la meta</span>
+                    <div class="campo-monto">
+                        <span>$</span>
+                        <input id="monto-meta" type="text" inputmode="numeric" placeholder="Ej: 800000">
+                    </div>
+
+                    <span class="etiqueta-seccion">Fecha estimada para lograrla</span>
+                    <input class="campo-texto" id="fecha-meta" type="date">
+                </div>
+
+                <div>
+                    <div class="panel-opcion">
+                        <span class="etiqueta-seccion">Elige un ícono</span>
+                        <div class="opciones" id="iconos-meta"></div>
+                    </div>
+                    <div class="panel-opcion">
+                        <span class="etiqueta-seccion">Elige un color</span>
+                        <div class="colores" id="colores-meta">
+                            <button class="color-opcion activo" type="button" data-color="verde" style="background-color: rgb(22, 163, 74);" aria-label="Verde"></button>
+                            <button class="color-opcion" type="button" data-color="azul" style="background-color: rgb(59, 130, 246);" aria-label="Azul"></button>
+                            <button class="color-opcion" type="button" data-color="morado" style="background-color: rgb(168, 85, 247);" aria-label="Morado"></button>
+                            <button class="color-opcion" type="button" data-color="naranja" style="background-color: rgb(245, 158, 11);" aria-label="Naranja"></button>
+                            <button class="color-opcion" type="button" data-color="rojo" style="background-color: rgb(239, 68, 68);" aria-label="Rojo"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="mensaje-monto" id="mensaje-crear"></p>
+            <div class="crear-acciones">
+                <button class="boton-cancelar" id="crear-cancelar" type="button">Cancelar</button>
+                <button class="boton-confirmar" id="boton-crear-meta" type="button" disabled>+ Crear meta</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== VISTA 3: DETALLE DE UNA META ========== -->
+    <main class="vista contenedor" id="vista-detalle" hidden>
+        <button class="enlace-atras" id="detalle-volver" type="button">← Volver a mis metas</button>
+        <div class="cabecera-seccion">
+            <div>
+                <h1 id="detalle-titulo"></h1>
+                <p>Tu próxima aventura está cada vez más cerca.</p>
+            </div>
+            <button class="boton-eliminar" id="detalle-eliminar" type="button">🗑️ Eliminar meta</button>
+        </div>
+
+        <div class="detalle-grid">
+            <div class="detalle-card principal">
+                <div>
+                    <small>Total ahorrado</small>
+                    <p class="detalle-monto" id="detalle-ahorrado"></p>
+                    <small id="detalle-de"></small><span class="chip-dias" id="detalle-dias"></span>
+                </div>
+                <div class="circulo-porcentaje" id="detalle-circulo"><span id="detalle-porcentaje"></span></div>
+            </div>
+
+            <div class="acciones-saldo acciones-meta">
+                <button class="boton-ingresar" id="detalle-ingresar" type="button">Ingresar dinero</button>
+                <button class="boton-sacar" id="detalle-retirar" type="button">Retirar dinero</button>
+            </div>
+
+            <div class="detalle-card">
+                <h3>Tu progreso</h3>
+                <div class="barra"><div class="barra-relleno" id="detalle-barra"></div></div>
+                <div class="etiquetas-barra"><span id="detalle-ahorrado-barra"></span><span id="detalle-faltan"></span></div>
+            </div>
+
+            <div class="detalle-card">
+                <h3>Detalle de la meta</h3>
+                <div class="fila-datos"><span>Meta de ahorro</span><b id="detalle-monto-meta"></b></div>
+                <div class="fila-datos"><span>Fecha estimada</span><b id="detalle-fecha"></b></div>
+            </div>
+
+            <div class="detalle-card mensaje-animo">
+                <div><h3>¡Sigue así, vas muy bien!</h3><small>Tu constancia es la clave para lograr tu meta.</small></div>
+                <img src="assets/mascota-festejo.png" alt="Mascota PocketPet festejando">
+            </div>
+
+            <div class="detalle-card">
+                <h3>Últimos movimientos</h3>
+                <ul class="lista-movimientos" id="detalle-movimientos"></ul>
+            </div>
+        </div>
+
+        <section class="banner-verde">
+            <h3>¡Cada pequeño aporte te acerca más a tus sueños!</h3>
+            <p>Sigue ahorrando y verás cómo tu meta se hace realidad.</p>
+        </section>
+    </main>
+
+    <!-- ========== VISTA 4: INGRESAR / RETIRAR DE LA META ========== -->
+    <main class="vista movimiento" id="vista-movimiento" hidden>
+        <button class="enlace-atras" id="mov-volver" type="button">← Volver a la meta</button>
+        <h1 id="mov-titulo"></h1>
+
+        <div class="cifras">
+            <div class="cifra"><span class="icono-cifra icono1">$</span><small>SALDO PRINCIPAL</small><b id="mov-saldo"></b></div>
+            <div class="cifra"><span class="icono-cifra icono2">🎯</span><small>AHORRADO EN LA META</small><b id="mov-ahorrado"></b></div>
+        </div>
+
+        <div class="pestanas">
+            <button class="pestana activa" type="button" data-modo="ingresar">Ingresar</button>
+            <button class="pestana" type="button" data-modo="retirar">Retirar</button>
+        </div>
+
+        <span class="etiqueta-seccion">Montos rápidos</span>
+        <div class="montos">
+            <button class="monto" type="button" data-valor="10000">$10.000</button>
+            <button class="monto" type="button" data-valor="50000">$50.000</button>
+            <button class="monto" type="button" data-valor="100000">$100.000</button>
+            <button class="monto" type="button" data-valor="200000">$200.000</button>
+        </div>
+
+        <div class="caja">
+            <span class="etiqueta-seccion" id="mov-pregunta"></span>
+            <div class="campo-monto">
+                <span>$</span>
+                <input id="mov-cantidad" type="text" inputmode="numeric" placeholder="0">
+            </div>
+            <p class="mensaje-monto" id="mov-mensaje"></p>
+            <button class="boton-confirmar" id="mov-confirmar" type="button" disabled>Confirmar</button>
+        </div>
+    </main>
+
+    <div class="fondo-ventana">
+        <div class="ventana-perfil">
+            <div class="ventana-cabecera">
+                <span>Mi cuenta PocketPet</span>
+                <button class="cerrar-ventana" id="cerrar-perfil" type="button">X</button>
+            </div>
+            <div class="ventana-cuerpo">
+                <div class="perfil-principal">
+                    <span class="avatar-grande">U</span>
+                    <div>
+                        <b>Usuario</b>
+                        <small>usuario@gmail.com</small>
+                    </div>
+                </div>
+                <div class="dato"><span>Nombre</span><b>Nombre completo</b></div>
+                <div class="dato"><span>Correo</span><b>Usuario@gmail.com</b></div>
+                <div class="dato"><span>Miembro desde</span><b>septiembre 2026</b></div>
+            </div>
+            <div class="ventana-pie">
+                <a href="landingpage.html">⇥ Cerrar sesión</a>
+            </div>
+        </div>
     </div>
+
+    <div class="cargando">
+        <div class="puntos">
+            <div class="punto punto1"></div>
+            <div class="punto punto2"></div>
+            <div class="punto punto3"></div>
+            <div class="punto punto4"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="metas.js"></script>
 </body>
 </html>
