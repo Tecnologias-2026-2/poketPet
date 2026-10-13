@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/secciones.css">
+    <title>Categorías - PocketPet</title>
+</head>
+<body class="pagina-categorias">
+
+    <header class="encabezado">
+        <div class="contenedor menu">
+            <div class="logo">
+                <img src="assets/mascotalogo.png" alt="Mascota PocketPet">
+                <div class="logo-texto">
+                    <b>POCKETPET</b>
+                    <small>EDUCACION FINANCIERA</small>
+                </div>
+            </div>
+            <div class="usuario">
+                <button class="perfil" id="boton-perfil" type="button">
+                    <span class="avatar-perfil">usuario</span>
+                </button>
+            </div>
+        </div>
+        <nav class="contenedor navegacion">
+            <a class="enlace-carga" href="#" data-destino="main.html">🏠 INICIO</a>
+            <a class="enlace-carga" href="#" data-destino="metas.html">🎯 Mis metas</a>
+            <a class="activo" href="#">🗂️ Categorías</a>
+            <a class="enlace-carga" href="#" data-destino="main.html#educacion">📚 Educación financiera</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <div class="cabecera-seccion">
+            <div>
+                <h1>Mis categorías de gastos 🗂️</h1>
+                <p>Aquí puedes organizar cada gasto fijo y no olvidar ningún pago.</p>
+            </div>
+            <a class="boton-nuevo enlace-carga" href="#" data-destino="crear-categoria.html">+ Crear nueva categoría</a>
+        </div>
+
+        <section class="resumen-tarjetas">
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-verde">🗂️</span>
+                <div><small>Total categorías activas</small><b id="resumen-activas">0</b></div>
+            </div>
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-azul">💰</span>
+                <div><small>Total apartado</small><b id="resumen-abonado">$0</b></div>
+            </div>
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-morado">🧾</span>
+                <div><small>Total a pagar</small><b id="resumen-meta">$0</b></div>
+            </div>
+            <div class="dato-resumen">
+                <span class="icono-resumen fondo-naranja">📈</span>
+                <div><small>Progreso global</small><b id="resumen-progreso">0%</b></div>
+            </div>
+        </section>
+
+        <section class="categorias-layout">
+            <div class="cuadricula" id="cuadricula"></div>
+            <aside class="lateral-categorias">
+                <div class="nota-lateral" id="nota-estado">
+                    <b>¡Vas al día con tus pagos!</b>
+                    Te avisaremos cuando se acerque una fecha de pago.
+                </div>
+                <div class="nota-lateral">
+                    <b>Consejo</b>
+                    Aparta tu dinero para cada gasto fijo apenas lo recibas, antes de gastarlo en otra cosa.
+                </div>
+            </aside>
+        </section>
+
+        <section class="banner-verde">
+            <h3>¡Vas muy bien con tus pagos!</h3>
+            <p>Cada pago a tiempo te acerca a tener el control de tu dinero.</p>
+        </section>
+    </main>
+
+    <!-- Ventana para abonar a una categoría -->
+    <div class="fondo-exito" id="ventana-abono">
+        <div class="tarjeta-exito">
+            <h3 id="abono-titulo">Abonar</h3>
+            <p id="abono-ayuda"></p>
+            <div class="campo-monto">
+                <span>$</span>
+                <input id="abono-monto" type="text" inputmode="numeric" placeholder="0">
+            </div>
+            <p class="mensaje-monto" id="abono-mensaje"></p>
+            <button class="boton-confirmar" id="abono-confirmar" type="button" disabled>Confirmar abono</button>
+            <button class="boton-cancelar" id="abono-cancelar" type="button">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="fondo-ventana">
+        <div class="ventana-perfil">
+            <div class="ventana-cabecera">
+                <span>Mi cuenta PocketPet</span>
+                <button class="cerrar-ventana" id="cerrar-perfil" type="button">X</button>
+            </div>
+            <div class="ventana-cuerpo">
+                <div class="perfil-principal">
+                    <span class="avatar-grande">U</span>
+                    <div>
+                        <b>Usuario</b>
+                        <small>usuario@gmail.com</small>
+                    </div>
+                </div>
+                <div class="dato"><span>Nombre</span><b>Nombre completo</b></div>
+                <div class="dato"><span>Correo</span><b>Usuario@gmail.com</b></div>
+                <div class="dato"><span>Miembro desde</span><b>septiembre 2026</b></div>
+            </div>
+            <div class="ventana-pie">
+                <a href="landingpage.html">⇥ Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cargando">
+        <div class="puntos">
+            <div class="punto punto1"></div>
+            <div class="punto punto2"></div>
+            <div class="punto punto3"></div>
+            <div class="punto punto4"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="categorias.js"></script>
+</body>
+</html>

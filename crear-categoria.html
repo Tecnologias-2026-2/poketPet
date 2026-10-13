@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/secciones.css">
+    <title>Crear categoría - PocketPet</title>
+</head>
+<body class="pagina-categorias">
+
+    <header class="encabezado">
+        <div class="contenedor menu">
+            <div class="logo">
+                <img src="assets/mascotalogo.png" alt="Mascota PocketPet">
+                <div class="logo-texto">
+                    <b>POCKETPET</b>
+                    <small>EDUCACION FINANCIERA</small>
+                </div>
+            </div>
+            <div class="usuario">
+                <button class="perfil" id="boton-perfil" type="button">
+                    <span class="avatar-perfil">usuario</span>
+                </button>
+            </div>
+        </div>
+        <nav class="contenedor navegacion">
+            <a class="enlace-carga" href="#" data-destino="main.html">🏠 INICIO</a>
+            <a class="enlace-carga" href="#" data-destino="metas.html">🎯 Mis metas</a>
+            <a class="activo enlace-carga" href="#" data-destino="categorias.html">🗂️ Categorías</a>
+            <a class="enlace-carga" href="#" data-destino="main.html#educacion">📚 Educación financiera</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <a class="enlace-atras enlace-carga" href="#" data-destino="categorias.html">← Volver a mis categorías</a>
+        <div class="cabecera-seccion">
+            <div>
+                <h1>Crea tu nueva categoría 🗂️</h1>
+                <p>Elige el gasto fijo que quieres organizar y no olvides ningún pago.</p>
+            </div>
+        </div>
+
+        <section class="crear-caja">
+            <div class="crear-columnas">
+                <div>
+                    <span class="etiqueta-seccion">Elige una categoría</span>
+                    <div class="opciones" id="opciones"></div>
+                    <input class="campo-texto oculto" id="nombre-otro" type="text" maxlength="24" placeholder="Escribe el nombre de tu categoría">
+
+                    <span class="etiqueta-seccion">Monto a pagar</span>
+                    <div class="campo-monto">
+                        <span>$</span>
+                        <input id="monto-pago" type="text" inputmode="numeric" placeholder="Ej: 800000">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="panel-opcion">
+                        <span class="etiqueta-seccion">Frecuencia de pago</span>
+                        <div class="pestanas">
+                            <button class="pestana activa" type="button" data-frecuencia="mensual">Mensual</button>
+                            <button class="pestana" type="button" data-frecuencia="semanal">Semanal</button>
+                        </div>
+                    </div>
+                    <div class="panel-opcion">
+                        <span class="etiqueta-seccion" id="etiqueta-fecha">Día del mes de pago</span>
+                        <select class="campo-select" id="fecha-pago"></select>
+                    </div>
+                    <div class="panel-opcion">
+                        <span class="etiqueta-seccion">Elige un color</span>
+                        <div class="colores" id="colores">
+                            <button class="color-opcion activo" type="button" data-color="verde" style="background-color: rgb(22, 163, 74);" aria-label="Verde"></button>
+                            <button class="color-opcion" type="button" data-color="azul" style="background-color: rgb(59, 130, 246);" aria-label="Azul"></button>
+                            <button class="color-opcion" type="button" data-color="morado" style="background-color: rgb(168, 85, 247);" aria-label="Morado"></button>
+                            <button class="color-opcion" type="button" data-color="naranja" style="background-color: rgb(245, 158, 11);" aria-label="Naranja"></button>
+                            <button class="color-opcion" type="button" data-color="rojo" style="background-color: rgb(239, 68, 68);" aria-label="Rojo"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crear-acciones">
+                <a class="boton-cancelar enlace-carga" href="#" data-destino="categorias.html">Cancelar</a>
+                <button class="boton-confirmar" id="boton-crear" type="button" disabled>+ Crear categoría</button>
+            </div>
+        </section>
+
+        <section class="banner-verde">
+            <h3>¡Organizar tus pagos es el primer paso para tener el control!</h3>
+            <p>Crea tu categoría y deja que PocketPet te recuerde cada fecha.</p>
+        </section>
+    </main>
+
+    <div class="fondo-ventana">
+        <div class="ventana-perfil">
+            <div class="ventana-cabecera">
+                <span>Mi cuenta PocketPet</span>
+                <button class="cerrar-ventana" id="cerrar-perfil" type="button">X</button>
+            </div>
+            <div class="ventana-cuerpo">
+                <div class="perfil-principal">
+                    <span class="avatar-grande">U</span>
+                    <div>
+                        <b>Usuario</b>
+                        <small>usuario@gmail.com</small>
+                    </div>
+                </div>
+                <div class="dato"><span>Nombre</span><b>Nombre completo</b></div>
+                <div class="dato"><span>Correo</span><b>Usuario@gmail.com</b></div>
+                <div class="dato"><span>Miembro desde</span><b>septiembre 2026</b></div>
+            </div>
+            <div class="ventana-pie">
+                <a href="landingpage.html">⇥ Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cargando">
+        <div class="puntos">
+            <div class="punto punto1"></div>
+            <div class="punto punto2"></div>
+            <div class="punto punto3"></div>
+            <div class="punto punto4"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="categorias.js"></script>
+</body>
+</html>
