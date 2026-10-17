@@ -1277,6 +1277,25 @@ h1, h2 {
 .boton-iniciar:hover {
     opacity: 0.9;
 }
+/* ---------- LOGIN Y REGISTRO: HEADER Y FOOTER ---------- */
+body.pagina-login {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body.pagina-login .pantalla {
+    flex: 1;
+    min-height: 0;
+}
+.lado-izquierdo .mancha {
+    background-color: rgb(216, 244, 236);
+}
+.lema {
+    color: rgb(17, 24, 39);
+}
+.lema b {
+    color: rgb(22, 163, 74);
+}
 /* ---------- CELULAR ---------- */
 @media (max-width: 800px) {
     .enlaces { display: none; }

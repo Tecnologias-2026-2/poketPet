@@ -392,10 +392,30 @@
 
 /* ---------- CELULAR ---------- */
 @media (max-width: 800px) {
-    .cabecera-seccion { flex-direction: column; align-items: flex-start; }
+    .enlaces { display: none; }
+    .hero .contenedor, .que-es .contenedor { flex-direction: column; }
+    .hero-texto { width: 100%; }
+    .hero h1 { font-size: 36px; }
+    .circulo-mascota { width: 260px; height: 260px; margin-top: 30px; }
+    .circulo-mascota img { width: 200px; }
+    .tarjetas { grid-template-columns: 1fr; }
+    .lado-izquierdo { display: none; }
+    .navegacion { flex-wrap: wrap;gap: 6px;}
+    .panel-saldo.contenedor { flex-direction: column;gap: 20px;}
+    .panel-mascota{ width: 130px;}
+    .acceso { flex-wrap: wrap;}
+    .banner-educacion { flex-direction: column; padding: 30px 20px; text-align: center;}
+    .banner-texto {width: 100%;}
+    .banner-educacion img {margin-top:20px ;}
+    .estadisticas{ justify-content: center;}
+    .temas{ grid-template-columns: 1fr;}
+    .panel-movimiento.contenedor{ flex-direction: column; gap: 20px;}
+    .movimiento-mascota{ width: 130px;}
+    .tarjeta-mensaje h2{ font-size: 28px;}
+    .montos {grid-template-columns: 1fr 1fr;}
     .resumen-tarjetas { grid-template-columns: 1fr 1fr; }
     .categorias-layout { grid-template-columns: 1fr; }
     .cuadricula { grid-template-columns: 1fr; }
     .crear-columnas { grid-template-columns: 1fr; }
-    .opciones { grid-template-columns: 1fr 1fr 1fr; }
+    .cabecera-seccion { flex-direction: column; align-items: flex-start; }
 }
