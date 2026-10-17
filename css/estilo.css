@@ -1307,7 +1307,7 @@ body.pagina-login .pantalla {
     .tarjetas { grid-template-columns: 1fr; }
     .lado-izquierdo { display: none; }
     .navegacion { flex-wrap: wrap;gap: 6px;}
-    .panel-saldo.contenedor { flex-direction: column;gap: 20px;}
+    .panel-saldo .contenedor { flex-direction: column; gap: 20px; }
     .panel-mascota{ width: 130px;}
     .acceso { flex-wrap: wrap;}
     .banner-educacion { flex-direction: column; padding: 30px 20px; text-align: center;}
@@ -1315,7 +1315,7 @@ body.pagina-login .pantalla {
     .banner-educacion img {margin-top:20px ;}
     .estadisticas{ justify-content: center;}
     .temas{ grid-template-columns: 1fr;}
-    .panel-movimiento.contenedor{ flex-direction: column; gap: 20px;}
+    .panel-movimiento .contenedor { flex-direction: column; gap: 20px; }
     .movimiento-mascota{ width: 130px;}
     .tarjeta-mensaje h2{ font-size: 28px;}
     .montos {grid-template-columns: 1fr 1fr;}
