@@ -97,6 +97,43 @@
     <footer class="pie">
         <div class="contenedor">© 2026 PocketPet. Todos los derechos reservados.</div>
     </footer>
+<script>
+(function () {
+    var enlaces = document.querySelectorAll('.enlaces a');
+    var secciones = [];
 
+    enlaces.forEach(function (enlace) {
+        var seccion = document.querySelector(enlace.getAttribute('href'));
+        if (seccion) {
+            secciones.push({ enlace: enlace, seccion: seccion });
+        }
+    });
+
+    function actualizar() {
+        var posicion = window.scrollY + 120;
+        var actual = secciones[0];
+
+        secciones.forEach(function (item) {
+            if (item.seccion.offsetTop <= posicion) {
+                actual = item;
+            }
+        });
+
+        // Si llegó al final de la página, queda marcado el último (Registro)
+        var alFinal = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
+        if (alFinal) {
+            actual = secciones[secciones.length - 1];
+        }
+
+        enlaces.forEach(function (enlace) {
+            enlace.classList.toggle('activo', enlace === actual.enlace);
+        });
+    }
+
+    window.addEventListener('scroll', actualizar);
+    window.addEventListener('load', actualizar);
+    actualizar();
+})();
+</script>
 </body>
 </html>

@@ -1296,6 +1296,31 @@ body.pagina-login .pantalla {
 .lema b {
     color: rgb(22, 163, 74);
 }
+/* ---------- MENU DEL LANDING: SECCION ACTIVA ---------- */
+.enlaces {
+    gap: 4px;
+}
+.enlaces a {
+    padding: 6px 14px;
+    border-radius: 16px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.enlaces a:hover {
+    color: rgb(22, 120, 60);
+}
+.enlaces a.activo {
+    background-color: rgb(220, 245, 232);
+    color: rgb(22, 120, 60);
+}
+.hero, .que-es, .herramientas, .cta {
+    scroll-margin-top: 70px;
+}
+/* Etiqueta "¿Qué es PocketPet?" más grande */
+.que-es .etiqueta {
+    font-size: 14px;
+    padding: 8px 18px;
+    margin-bottom: 24px;
+}
 /* ---------- CELULAR ---------- */
 @media (max-width: 800px) {
     .enlaces { display: none; }
