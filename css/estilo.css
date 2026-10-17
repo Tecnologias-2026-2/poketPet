@@ -1322,6 +1322,7 @@ body.pagina-login .pantalla {
     margin-bottom: 24px;
 }
 /* ---------- CELULAR ---------- */
+/* ---------- CELULAR ---------- */
 @media (max-width: 800px) {
     .enlaces { display: none; }
     .hero .contenedor, .que-es .contenedor { flex-direction: column; }
@@ -1330,18 +1331,42 @@ body.pagina-login .pantalla {
     .circulo-mascota { width: 260px; height: 260px; margin-top: 30px; }
     .circulo-mascota img { width: 200px; }
     .tarjetas { grid-template-columns: 1fr; }
-    .lado-izquierdo { display: none; }
-    .navegacion { flex-wrap: wrap;gap: 6px;}
+
+    /* Login, registro y recuperar contraseña */
+    .pantalla { flex-direction: column; }
+    .lado-izquierdo {
+        width: 100%;
+        padding: 28px 0 36px;
+        justify-content: flex-start;
+    }
+    .lado-izquierdo > :not(.mancha) {
+        position: relative;
+        z-index: 1;
+    }
+    .logo-grande { width: 100px; }
+    .etiqueta-hola { margin: -12px 0 16px -64px; }
+    .lado-derecho { padding: 36px 0 60px; }
+    .formulario { max-width: 88%; }
+
+    /* Bolitas del panel verde: a las esquinas */
+    .mancha5 { width: 40px; height: 38px; top: 12px; left: 12px; }
+    .mancha6 { width: 60px; height: 56px; bottom: -24px; left: auto; right: 24px; }
+
+    /* Bolitas del lado blanco: a las esquinas */
+    .mancha1 { width: 90px; height: 82px; top: -30px; left: -30px; }
+    .mancha2 { width: 36px; height: 32px; top: 20px; left: auto; right: 30px; }
+
+    .navegacion { flex-wrap: wrap; gap: 6px; }
     .panel-saldo .contenedor { flex-direction: column; gap: 20px; }
-    .panel-mascota{ width: 130px;}
-    .acceso { flex-wrap: wrap;}
-    .banner-educacion { flex-direction: column; padding: 30px 20px; text-align: center;}
-    .banner-texto {width: 100%;}
-    .banner-educacion img {margin-top:20px ;}
-    .estadisticas{ justify-content: center;}
-    .temas{ grid-template-columns: 1fr;}
+    .panel-mascota { width: 130px; }
+    .acceso { flex-wrap: wrap; }
+    .banner-educacion { flex-direction: column; padding: 30px 20px; text-align: center; }
+    .banner-texto { width: 100%; }
+    .banner-educacion img { margin-top: 20px; }
+    .estadisticas { justify-content: center; }
+    .temas { grid-template-columns: 1fr; }
     .panel-movimiento .contenedor { flex-direction: column; gap: 20px; }
-    .movimiento-mascota{ width: 130px;}
-    .tarjeta-mensaje h2{ font-size: 28px;}
-    .montos {grid-template-columns: 1fr 1fr;}
+    .movimiento-mascota { width: 130px; }
+    .tarjeta-mensaje h2 { font-size: 28px; }
+    .montos { grid-template-columns: 1fr 1fr; }
 }
