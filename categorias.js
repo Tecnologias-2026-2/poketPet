@@ -189,6 +189,10 @@
         movimientos.unshift({ tipo: 'sacar', cantidad: cantidad });
         sessionStorage.setItem('movimientos', JSON.stringify(movimientos));
 
+        guardarEnBD('abonos_categoria', { categoria_id: categoriaActiva.id, cantidad: cantidad });
+        actualizarEnBD('categorias', categoriaActiva.id, { abonado: categoriaActiva.abonado + cantidad });
+        guardarEnBD('movimientos', { tipo: 'abono_categoria', cantidad: cantidad, saldo_resultante: leerNumero('saldo') });
+
         cerrarAbono();
         pintarLista();
     }
@@ -218,6 +222,7 @@
                         if (c.id === id) { c.abonado = 0; }
                     });
                     guardarCategorias(lista);
+                    actualizarEnBD('categorias', id, { abonado: 0 });
                     pintarLista();
                 }
             }
@@ -327,7 +332,7 @@
         botonCrear.addEventListener('click', function () {
             if (botonCrear.disabled) { return; }
             var lista = leerCategorias();
-            lista.push({
+            var nueva = {
                 id: Date.now(),
                 nombre: nombreFinal(),
                 icono: ICONOS[nombreElegido],
@@ -336,8 +341,18 @@
                 fecha: Number(selectorFecha.value),
                 color: colorElegido,
                 abonado: 0
-            });
+            };
+            lista.push(nueva);
             guardarCategorias(lista);
+            guardarEnBD('categorias', {
+                id: nueva.id,
+                nombre: nueva.nombre,
+                monto: nueva.monto,
+                frecuencia: nueva.frecuencia,
+                dia_de_pago: nueva.fecha,
+                color: nueva.color,
+                abonado: 0
+            });
 
             pantallaCarga.classList.add('activo');
             setTimeout(function () {
