@@ -255,7 +255,7 @@
     botonCrear.addEventListener('click', function () {
         var lista = leerMetas();
         if (botonCrear.disabled || lista.length >= MAX_METAS) { return; }
-        lista.push({
+        var nueva = {
             id: Date.now(),
             nombre: campoNombre.value.trim(),
             icono: iconoElegido,
@@ -264,8 +264,17 @@
             fecha: campoFecha.value,
             ahorrado: 0,
             movimientos: []
-        });
+        };
+        lista.push(nueva);
         guardarMetas(lista);
+        guardarEnBD('metas', {
+            id: nueva.id,
+            nombre: nueva.nombre,
+            monto_meta: nueva.monto,
+            fecha_estimada: nueva.fecha,
+            color: nueva.color,
+            ahorrado: 0
+        });
         conCarga(abrirLista);
     });
 
@@ -325,6 +334,10 @@
         var restantes = leerMetas().filter(function (m) { return m.id !== metaActual.id; });
         guardarMetas(restantes);
         sessionStorage.setItem('saldo', leerNumero('saldo') + metaActual.ahorrado);
+        eliminarDeBD('metas', metaActual.id);
+        if (metaActual.ahorrado > 0) {
+            guardarEnBD('movimientos', { tipo: 'devolucion_meta_eliminada', cantidad: metaActual.ahorrado, saldo_resultante: leerNumero('saldo') });
+        }
         metaActual = null;
         abrirLista();
     });
@@ -411,6 +424,14 @@
         });
         guardarMetas(lista);
         sessionStorage.setItem('saldo', leerNumero('saldo') + (modo === 'ingresar' ? -cantidad : cantidad));
+
+        guardarEnBD('movimientos_meta', { meta_id: metaActual.id, tipo: modo === 'ingresar' ? 'aporte' : 'retiro', cantidad: cantidad });
+        actualizarEnBD('metas', metaActual.id, { ahorrado: metaActual.ahorrado });
+        guardarEnBD('movimientos', {
+            tipo: modo === 'ingresar' ? 'transferencia_a_meta' : 'transferencia_desde_meta',
+            cantidad: cantidad,
+            saldo_resultante: leerNumero('saldo')
+        });
 
         conCarga(function () {
             pintarDetalle();
