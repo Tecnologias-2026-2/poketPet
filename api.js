@@ -1,6 +1,9 @@
 /* CONEXION CON LA API DE POCKET PET
    El navegador ya no habla con Supabase: solo con nuestra API (backend). */
-var API_URL = 'http://localhost:3000/api';
+
+var EN_LOCAL_SEPARADO = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+                        && location.port !== '3000';
+var API_URL = EN_LOCAL_SEPARADO ? 'http://localhost:3000/api' : '/api';
 var CLAVE_SESION = 'pocketpet_sesion';
 
 var api = (function () {

@@ -1,0 +1,1388 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: rgb(17, 24, 39);
+}
+body {
+    animation-name: aparecer;
+    animation-duration: 0.6s;
+    animation-timing-function: ease;
+}
+@keyframes aparecer {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+a {
+    text-decoration: none;
+}
+h1, h2 {
+    font-family: 'Outfit', Arial, sans-serif;
+    margin: 0;
+}
+.contenedor {
+    width: 1000px;
+    max-width: 92%;
+    margin: 0 auto;
+}
+.verde {
+    color: rgb(22, 163, 74);
+}
+
+/* ---------- ENCABEZADO ---------- */
+.encabezado {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu img {
+    height: 50px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+.logo-texto b {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(17, 24, 39);
+}
+.logo-texto small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgb(100, 116, 139);
+}
+.enlaces {
+    display: flex;
+    gap: 32px;
+}
+.enlaces a {
+    color: rgb(17, 24, 39);
+    font-size: 14px;
+}
+.boton-sesion {
+    background-color: rgb(220, 245, 232);
+    color: rgb(22, 120, 60);
+    border-style: solid;
+    border-color: rgb(120, 190, 140);
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 14px;
+}
+
+/* ---------- INICIO (HERO) ---------- */
+.hero {
+    background-color: rgb(173, 222, 210);
+    padding: 70px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+.hero .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+.fondo-circulo {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(216, 244, 236);
+}
+.fondo1 {
+    width: 320px;
+    height: 320px;
+    top: -60px;
+    right: -80px;
+}
+.fondo2 {
+    width: 260px;
+    height: 260px;
+    bottom: -170px;
+    left: -90px;
+}
+.hero-texto {
+    width: 50%;
+}
+.etiqueta {
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    color: rgb(22, 120, 60);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+}
+.hero p {
+    color: rgb(90, 110, 110);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+.estrellas {
+    font-size: 13px;
+}
+.prueba-social {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.avatares {
+    display: flex;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -10px;
+}
+.avatar1 { background-color: rgb(22, 163, 74); }
+.avatar2 { background-color: rgb(14, 165, 233); }
+.avatar3 { background-color: rgb(168, 85, 247); }
+.avatar4 { background-color: rgb(245, 158, 11); }
+.circulo-mascota {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background-color: rgb(200, 245, 215);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circulo-mascota img {
+    width: 300px;
+}
+
+/* ---------- QUE ES POCKETPET ---------- */
+.que-es {
+    padding: 70px 0;
+}
+.que-es .contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+.que-es img {
+    width: 300px;
+}
+.que-es h2 {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+.que-es p {
+    color: rgb(90, 100, 110);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.lista {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+.lista li {
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+/* ---------- HERRAMIENTAS ---------- */
+.herramientas {
+    background-color: rgb(216, 244, 236);
+    padding: 70px 0;
+    text-align: center;
+}
+.herramientas h2 {
+    font-size: 36px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+.herramientas p {
+    color: rgb(90, 100, 110);
+    font-size: 14px;
+    margin: 0 0 40px;
+}
+.tarjetas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    text-align: left;
+}
+.tarjeta {
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.tarjeta h3 {
+    font-size: 13px;
+    margin: 12px 0 6px;
+}
+.tarjeta span {
+    font-size: 24px;
+}
+.tarjeta p {
+    font-size: 11px;
+    margin: 0;
+}
+.tarjeta1 { background-color: rgb(255, 255, 214); }
+.tarjeta2 { background-color: rgb(209, 250, 220); }
+.tarjeta3 { background-color: rgb(250, 228, 255); }
+.tarjeta4 { background-color: rgb(230, 255, 255); }
+.tarjeta5 { background-color: rgb(255, 240, 246); }
+.tarjeta6 { background-color: rgb(209, 224, 255); }
+
+/* ---------- LLAMADO A LA ACCION ---------- */
+.cta {
+    background-color: rgb(216, 244, 236);
+    border-radius: 20px;
+    padding: 50px 20px;
+    text-align: center;
+    margin: 60px auto;
+}
+.cta img {
+    width: 110px;
+}
+.cta h2 {
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    line-height: 1.15;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+}
+.cta .verde {
+    font-size: 14px;
+    margin: 0 0 24px;
+}
+.boton-verde {
+    display: inline-block;
+    background-color: rgb(22, 163, 74);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 14px 36px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(22, 163, 74, 0.4);
+}
+.boton-verde:hover {
+    background-color: rgb(16, 120, 54);
+}
+.cta small {
+    display: block;
+    margin-top: 14px;
+    color: rgb(90, 100, 110);
+}
+
+/* ---------- PIE DE PAGINA ---------- */
+.pie {
+    background-color: rgb(173, 222, 210);
+    padding: 24px 0;
+    font-size: 12px;
+    color: rgb(60, 80, 80);
+}
+
+/* ---------- LOGIN Y REGISTRO ---------- */
+.pantalla {
+    display: flex;
+    min-height: 100vh;
+}
+.lado-izquierdo {
+    width: 31%;
+    background-color: rgb(176, 222, 210);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.logo-grande {
+    width: 150px;
+}
+.etiqueta-hola {
+    background-color: rgb(255, 204, 0);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: -14px 0 24px -90px;
+}
+.lema {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.lado-derecho {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.formulario {
+    width: 300px;
+    position: relative;
+    z-index: 2;
+}
+.formulario h2 {
+    font-size: 26px;
+}
+.subtitulo {
+    color: rgb(100, 116, 139);
+    font-size: 13px;
+    margin: 6px 0 4px;
+}
+.formulario label {
+    display: block;
+    font-size: 13px;
+    margin-top: 14px;
+}
+.formulario input {
+    width: 100%;
+    height: 42px;
+    background-color: rgb(238, 238, 238);
+    border-style: none;
+    border-radius: 12px;
+    padding: 0 14px;
+    margin-top: 6px;
+    font-size: 13px;
+}
+.boton-amarillo {
+    width: 100%;
+    height: 44px;
+    background-color: rgb(255, 204, 0);
+    border-style: none;
+    border-radius: 22px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 22px;
+}
+.boton-amarillo:hover {
+    background-color: rgb(235, 184, 0);
+}
+.olvido {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    margin-top: 8px;
+    color: rgb(60, 130, 40);
+}
+.enlace-pequeno {
+    text-align: center;
+    font-size: 12px;
+    color: rgb(100, 116, 139);
+    margin-top: 24px;
+}
+.enlace-pequeno a {
+    color: rgb(60, 130, 40);
+    font-weight: bold;
+}
+.mancha {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(160, 205, 150);
+}
+.mancha1 { width: 110px; height: 100px; top: 40px; left: 12%; }
+.mancha2 { width: 44px; height: 40px; top: 30px; left: 30%; }
+.mancha3 { width: 60px; height: 56px; bottom: 30px; right: 14%; }
+.mancha4 { width: 36px; height: 30px; bottom: 20px; right: 4%; }
+.mancha5 { width: 56px; height: 52px; top: 30px; left: 10px; }
+.mancha6 { width: 70px; height: 66px; bottom: 20px; left: 30%; }
+
+/* ---------- PANTALLA DE CARGA ---------- */
+.cargando {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.cargando.activo {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.puntos {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+.punto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.punto1 { background-color: rgb(255, 204, 0); }
+.punto2 { background-color: rgb(62, 123, 53); animation-delay: -0.5s; }
+.punto3 { background-color: rgb(125, 179, 107); animation-delay: -1s; }
+.punto4 { background-color: rgb(247, 226, 122); animation-delay: -1.5s; }
+@keyframes girar {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(38px, 0); }
+    50%  { transform: translate(38px, 38px); }
+    75%  { transform: translate(0, 38px); }
+    100% { transform: translate(0, 0); }
+}
+/* ---------- PANTALLA PRINCIPAL (MAIN) ---------- */
+.principal {
+    background-color: rgb(246, 248, 250);
+}
+.principal .encabezado {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(255, 255, 255);
+    border-style: none;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: rgb(17, 24, 39);
+    cursor: pointer;
+    padding: 0;
+}
+.perfil:hover {
+    color: rgb(22, 120, 60);
+}
+.avatar-perfil {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, rgb(22, 163, 74), rgb(74, 222, 128));
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.salir {
+    color: rgb(100, 116, 139);
+    font-size: 13px;
+}
+.salir:hover {
+    color: rgb(22, 120, 60);
+}
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 4px;
+}
+.navegacion a {
+    color: rgb(100, 116, 139);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 16px;
+}
+.navegacion a:hover {
+    color: rgb(22, 120, 60);
+}
+.navegacion a.activo {
+    background-color: rgb(220, 245, 232);
+    color: rgb(22, 120, 60);
+}
+
+/* ---------- PANEL DE SALDO ---------- */
+.panel-saldo {
+    background-color: rgb(173, 222, 210);
+    padding: 30px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+.panel-saldo .contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+.panel-mascota {
+    width: 170px;
+}
+.panel-datos {
+    flex: 1;
+    text-align: center;
+}
+.saldo-etiqueta {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgb(60, 80, 80);
+}
+.saldo-monto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 32px;
+    margin: 8px 0 18px;
+}
+.moneda {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgb(22, 163, 74);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.acciones-saldo {
+    display: flex;
+    gap: 14px;
+}
+.boton-ingresar, .boton-sacar {
+    flex: 1;
+    height: 36px;
+    border-style: none;
+    border-radius: 6px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boton-ingresar {
+    background-color: rgb(22, 163, 74);
+    color: rgb(255, 255, 255);
+}
+
+.boton-sacar {
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 24, 39);
+}
+.boton-ingresar:hover, .boton-sacar:hover {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+    transition: background-color 0.2s, color 0.2s;
+}
+.pestana:hover {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+}
+.resumen {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+}
+.caja-resumen {
+    flex: 1;
+    background-color: rgb(235, 250, 244);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: left;
+}
+.caja-resumen small {
+    display: block;
+    font-size: 10px;
+    color: rgb(100, 116, 139);
+    margin-bottom: 4px;
+}
+.caja-resumen b {
+    font-size: 14px;
+}
+/* ---------- ACCESOS (METAS Y CATEGORIAS) ---------- */
+.accesos {
+    padding: 24px 0 10px;
+}
+.acceso {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 14px;
+}
+.acceso img {
+    width: 44px;
+}
+.acceso-texto {
+    flex: 1;
+}
+.acceso h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 14px;
+    margin: 0 0 4px;
+}
+.acceso p {
+    font-size: 11px;
+    color: rgb(60, 70, 80);
+    margin: 0;
+}
+.boton-pequeno {
+    background-color: rgb(22, 163, 74);
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+.boton-pequeno:hover {
+    background-color: rgb(16, 120, 54);
+}
+/* ---------- EDUCACION FINANCIERA ---------- */
+.educacion {
+    padding: 20px 0 50px;
+    scroll-margin-top: 100px;
+}
+.banner-educacion {
+    background-color: rgb(216, 244, 236);
+    border-radius: 16px;
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.banner-texto {
+    width: 50%;
+}
+.banner-educacion h2 {
+    font-size: 30px;
+    line-height: 1.15;
+    color: rgb(10, 70, 35);
+}
+.amarillo {
+    display: block;
+    color: rgb(255, 204, 0);
+}
+.banner-educacion p {
+    color: rgb(60, 80, 80);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 16px 0;
+}
+.banner-educacion img {
+    width: 200px;
+}
+.estadisticas {
+    display: flex;
+    gap: 40px;
+}
+.estadisticas b {
+    display: block;
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 22px;
+}
+.estadisticas small {
+    font-size: 11px;
+    color: rgb(60, 80, 80);
+}
+.numero1 {
+    color: rgb(245, 158, 11);
+}
+.numero2 {
+    color: rgb(239, 68, 68);
+}
+.temas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+.tema {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-color: rgb(34, 197, 94);
+    border-width: 1px;
+    border-radius: 14px;
+    padding: 18px;
+    min-height: 130px;
+}
+.tema img {
+    width: 40px;
+    border-radius: 50%;
+}
+.tema-etiqueta {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: rgb(34, 214, 100);
+    color: rgb(17, 24, 39);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.tema h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 13px;
+    margin: 18px 0 6px;
+}
+.tema p {
+    font-size: 10px;
+    color: rgb(90, 100, 110);
+    margin: 0;
+    width: 70%;
+}
+.tema-mas {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(34, 214, 100);
+    color: rgb(17, 24, 39);
+    font-size: 14px;
+    font-family: "DM Sans", Arial, sans-serif;
+    border-style:none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*VENTANA DE PERFIL */
+.fondo-ventana {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 50;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 70px 4%;
+}
+.fondo-ventana.activo {
+    display: flex;
+}
+.ventana-perfil {
+    width: 340px;
+    max-width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.ventana-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: rgb(100, 116, 139);
+    border-bottom-style: solid;
+    border-bottom-color: rgb(230, 234, 238);
+    border-bottom-width: 1px;
+}
+.cerrar-ventana {
+    background-color: rgb(255, 255, 255);
+    border-style: none;
+    font-size: 14px;
+    color: rgb(100, 116, 139);
+    cursor: pointer;
+}
+.ventana-cuerpo {
+    padding: 20px;
+}
+.perfil-principal {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.perfil-principal b {
+    display: block;
+    font-size: 18px;
+}
+.perfil-principal small {
+    color: rgb(100, 116, 139);
+    font-size: 13px;
+}
+.avatar-grande {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, rgb(22, 163, 74), rgb(74, 222, 128));
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dato {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+.dato span {
+    color: rgb(140, 150, 165);
+}
+.ventana-pie {
+    padding: 16px 20px;
+    border-top-style: solid;
+    border-top-color: rgb(230, 234, 238);
+    border-top-width: 1px;
+}
+.ventana-pie a {
+    color: rgb(100, 116, 139);
+    font-size: 14px;
+}
+.ventana-pie a:hover {
+    color: rgb(22, 120, 60);
+}
+
+/* ---------- PAGINAS EN CONSTRUCCION (METAS Y CATEGORIAS) ---------- */
+.pagina-vacia {
+    background-color: rgb(255, 255, 255);
+}
+.mensaje-vacio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.mensaje-vacio h2 {
+    font-size: 32px;
+}
+.enlace-volver {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgb(60, 130, 40);
+}
+
+/* ---------- TARJETAS DESPLEGABLES ---------- */
+.tema-detalle {
+    display: none;
+    margin-top: 8px;
+}
+.tema.abierto .tema-detalle {
+    display: block;
+}
+.tema.abierto .tema-resumen {
+    display: none;
+}
+.tema.abierto {
+    padding-bottom: 56px;
+}
+.tema .tema-detalle p {
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgb(70, 100, 50);
+    margin: 0 0 10px;
+}
+.tema-detalle ul, .tema-detalle ol {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgb(70, 100, 50);
+}
+.tema-detalle li {
+    margin-bottom: 8px;
+}
+.tema-detalle b {
+    color: rgb(40, 80, 30);
+}
+/* ---------- INGRESAR Y SACAR DINERO ---------- */
+.panel-movimiento {
+    background-image: linear-gradient(180deg, rgb(216, 244, 236), rgb(173, 222, 210));
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+.panel-movimiento .fondo-circulo {
+    background-color: rgb(167, 240, 214);
+}
+.panel-movimiento .contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+.movimiento-mascota {
+    width: 190px;
+}
+.movimiento-datos {
+    flex: 1;
+}
+.tarjeta-mensaje {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 18px 22px;
+}
+.tarjeta-mensaje small {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.tarjeta-mensaje h2 {
+    font-size: 36px;
+    line-height: 1.1;
+    margin: 6px 0 2px;
+}
+.tarjeta-mensaje p {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 17px;
+    margin: 0;
+}
+.cifras {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+}
+.cifra {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.icono-cifra {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 11px;
+    margin: 0 auto 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icono1 { background-color: rgb(22, 163, 74); color: rgb(255, 255, 255); }
+.icono2 { background-color: rgb(209, 250, 220); color: rgb(22, 163, 74); }
+.icono3 { background-color: rgb(255, 247, 190); color: rgb(245, 158, 11); }
+.cifra small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: rgb(140, 150, 165);
+}
+.cifra b {
+    font-size: 14px;
+}
+.movimiento {
+    width: 540px;
+    max-width: 92%;
+    margin: 0 auto;
+    padding: 24px 0 50px;
+}
+.pestanas {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.pestana {
+    flex: 1;
+    height: 34px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(100, 116, 139);
+    border-style: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.pestana.activa {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+}
+.etiqueta-seccion {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(140, 150, 165);
+    margin: 16px 0 8px;
+}
+.montos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.monto {
+    height: 34px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 24, 39);
+    border-style: solid;
+    border-color: rgb(230, 234, 238);
+    border-width: 1px;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.monto.activo {
+    background-color: rgb(0, 200, 80);
+    border-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+}
+.caja {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.caja .etiqueta-seccion {
+    margin-top: 0;
+}
+.campo-monto {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    border-style: solid;
+    border-color: rgb(230, 234, 238);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 0 14px;
+    margin: 10px 0 8px;
+}
+.campo-monto span {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(100, 116, 139);
+}
+.campo-monto input {
+    flex: 1;
+    width: 100%;
+    border-style: none;
+    outline-style: none;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(100, 116, 139);
+}
+.mensaje-monto {
+    font-size: 12px;
+    min-height: 16px;
+    margin: 0 0 12px;
+    color: rgb(22, 120, 60);
+}
+.mensaje-monto.error {
+    color: rgb(220, 38, 38);
+}
+.boton-confirmar {
+    width: 100%;
+    height: 44px;
+    background-color: rgb(243, 244, 246);
+    color: rgb(200, 205, 212);
+    border-style: none;
+    border-radius: 22px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+.boton-confirmar.listo {
+    background-color: rgb(0, 200, 80);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.boton-confirmar.listo:hover {
+    background-color: rgb(0, 170, 68);
+}
+.lista-movimientos {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    min-height: 120px;
+}
+.fila-movimiento {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(238, 240, 243);
+    border-bottom-width: 1px;
+}
+.positivo {
+    color: rgb(22, 163, 74);
+}
+.negativo {
+    color: rgb(220, 38, 38);
+}
+.sin-movimientos {
+    font-size: 12px;
+    color: rgb(160, 170, 180);
+}
+/* ---------- CAMPO DE CONTRASEÑA (OJITO) ---------- */
+.campo-clave {
+    position: relative;
+    margin-top: 6px;
+}
+.campo-clave input {
+    margin-top: 0;
+    padding-right: 44px;
+}
+.ver-clave {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    height: 42px;
+    width: 32px;
+    background-color: transparent;
+    border-style: none;
+    color: rgb(100, 116, 139);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ver-clave:hover {
+    color: rgb(22, 120, 60);
+}
+/* ---------- RECUPERAR CONTRASEÑA ---------- */
+.paso {
+    display: none;
+}
+.paso.activo {
+    display: block;
+}
+.formulario .codigo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 6px;
+}
+.formulario .codigo input {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.formulario .codigo input:focus {
+    outline-style: solid;
+    outline-color: rgb(255, 204, 0);
+    outline-width: 2px;
+}
+
+/* ---------- MENSAJE DE CONTRASEÑA RESTABLECIDA ---------- */
+.fondo-exito {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+}
+.fondo-exito.activo {
+    display: flex;
+}
+.tarjeta-exito {
+    width: 340px;
+    max-width: 90%;
+    background-image: linear-gradient(180deg, rgb(240, 253, 250), rgb(255, 255, 255));
+    border-radius: 16px;
+    padding: 30px 26px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.icono-exito {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background-color: rgb(167, 240, 214);
+    color: rgb(22, 120, 60);
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tarjeta-exito h3 {
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 18px;
+    color: rgb(10, 120, 80);
+    margin: 0 0 8px;
+}
+.tarjeta-exito p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgb(90, 100, 110);
+    margin: 0 0 20px;
+}
+.boton-iniciar {
+    width: 100%;
+    height: 40px;
+    background-image: linear-gradient(90deg, rgb(34, 197, 94), rgb(14, 165, 233));
+    color: rgb(255, 255, 255);
+    border-style: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-iniciar:hover {
+    opacity: 0.9;
+}
+/* ---------- LOGIN Y REGISTRO: HEADER Y FOOTER ---------- */
+body.pagina-login {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body.pagina-login .pantalla {
+    flex: 1;
+    min-height: 0;
+}
+.lado-izquierdo .mancha {
+    background-color: rgb(216, 244, 236);
+}
+.lema {
+    color: rgb(17, 24, 39);
+}
+.lema b {
+    color: rgb(22, 163, 74);
+}
+/* ---------- MENU DEL LANDING: SECCION ACTIVA ---------- */
+.enlaces {
+    gap: 4px;
+}
+.enlaces a {
+    padding: 6px 14px;
+    border-radius: 16px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.enlaces a:hover {
+    color: rgb(22, 120, 60);
+}
+.enlaces a.activo {
+    background-color: rgb(220, 245, 232);
+    color: rgb(22, 120, 60);
+}
+.hero, .que-es, .herramientas, .cta {
+    scroll-margin-top: 70px;
+}
+/* Etiqueta "¿Qué es PocketPet?" más grande */
+.que-es .etiqueta {
+    font-size: 14px;
+    padding: 8px 18px;
+    margin-bottom: 24px;
+}
+/* ---------- CELULAR ---------- */
+/* ---------- CELULAR ---------- */
+@media (max-width: 800px) {
+    .enlaces { display: none; }
+    .hero .contenedor, .que-es .contenedor { flex-direction: column; }
+    .hero-texto { width: 100%; }
+    .hero h1 { font-size: 36px; }
+    .circulo-mascota { width: 260px; height: 260px; margin-top: 30px; }
+    .circulo-mascota img { width: 200px; }
+    .tarjetas { grid-template-columns: 1fr; }
+
+    /* Login, registro y recuperar contraseña */
+    .pantalla { flex-direction: column; }
+    .lado-izquierdo {
+        width: 100%;
+        padding: 28px 0 36px;
+        justify-content: flex-start;
+    }
+    .lado-izquierdo > :not(.mancha) {
+        position: relative;
+        z-index: 1;
+    }
+    .logo-grande { width: 100px; }
+    .etiqueta-hola { margin: -12px 0 16px -64px; }
+    .lado-derecho { padding: 36px 0 60px; }
+    .formulario { max-width: 88%; }
+
+    /* Bolitas del panel verde: a las esquinas */
+    .mancha5 { width: 40px; height: 38px; top: 12px; left: 12px; }
+    .mancha6 { width: 60px; height: 56px; bottom: -24px; left: auto; right: 24px; }
+
+    /* Bolitas del lado blanco: a las esquinas */
+    .mancha1 { width: 90px; height: 82px; top: -30px; left: -30px; }
+    .mancha2 { width: 36px; height: 32px; top: 20px; left: auto; right: 30px; }
+
+    .navegacion { flex-wrap: wrap; gap: 6px; }
+    .panel-saldo .contenedor { flex-direction: column; gap: 20px; }
+    .panel-mascota { width: 130px; }
+    .acceso { flex-wrap: wrap; }
+    .banner-educacion { flex-direction: column; padding: 30px 20px; text-align: center; }
+    .banner-texto { width: 100%; }
+    .banner-educacion img { margin-top: 20px; }
+    .estadisticas { justify-content: center; }
+    .temas { grid-template-columns: 1fr; }
+    .panel-movimiento .contenedor { flex-direction: column; gap: 20px; }
+    .movimiento-mascota { width: 130px; }
+    .tarjeta-mensaje h2 { font-size: 28px; }
+    .montos { grid-template-columns: 1fr 1fr; }
+}
