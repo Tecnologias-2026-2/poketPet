@@ -1,0 +1,13 @@
+const Auth = require('../models/auth.model');
+const manejar = require('./manejar');
+
+module.exports = manejar(async (req, res, next) => {
+  const token = (req.headers.authorization || '').replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: 'Sin sesión' });
+
+  const { data, error } = await Auth.usuarioDesdeToken(token);
+  if (error || !data.user) return res.status(401).json({ error: 'Sesión no válida' });
+
+  req.usuarioId = data.user.id;
+  next();
+});

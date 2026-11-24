@@ -1,25 +1,16 @@
 const Meta = require('../models/metas.model');
+const manejar = require('../middlewares/manejar');
 
-exports.listar = async (req, res) => {
-  try { res.json(await Meta.listar(req.query.usuario_id)); }
-  catch (e) { res.status(500).json({ error: e.message }); }
-};
+exports.listar = manejar(async (req, res) =>
+  res.json(await Meta.listar(req.usuarioId)));
 
-exports.crear = async (req, res) => {
-  try { res.status(201).json(await Meta.crear(req.body)); }
-  catch (e) { res.status(500).json({ error: e.message }); }
-};
+exports.crear = manejar(async (req, res) =>
+  res.status(201).json(await Meta.crear(req.usuarioId, req.body)));
 
-exports.actualizar = async (req, res) => {
-  try {
-    const meta = await Meta.actualizar(req.params.id, req.query.usuario_id, req.body);
-    meta ? res.json(meta) : res.status(404).json({ error: 'No encontrada' });
-  } catch (e) { res.status(500).json({ error: e.message }); }
-};
+exports.movimientos = manejar(async (req, res) =>
+  res.json(await Meta.movimientos(req.usuarioId, req.params.id)));
 
-exports.eliminar = async (req, res) => {
-  try {
-    const n = await Meta.eliminar(req.params.id, req.query.usuario_id);
-    n ? res.status(204).end() : res.status(404).json({ error: 'No encontrada' });
-  } catch (e) { res.status(500).json({ error: e.message }); }
-};
+exports.eliminar = manejar(async (req, res) => {
+  const ok = await Meta.eliminar(req.usuarioId, req.params.id);
+  ok ? res.status(204).end() : res.status(404).json({ error: 'Meta no encontrada' });
+});
